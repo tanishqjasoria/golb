@@ -1,0 +1,11 @@
+---
+interface Props {
+  cmd: string;
+}
+
+const { cmd } = Astro.props;
+---
+<div class="prompt-line">
+  <span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span>
+  <span class="p-sym">❯</span> {cmd}
+</div>

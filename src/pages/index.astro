@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import Prompt from '@/components/Prompt.astro';
+import { isoDate, readingTime } from '@/lib/format';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const courses = (await getCollection('courses')).sort(
+  (a, b) => b.data.started.valueOf() - a.data.started.valueOf(),
+);
+---
+<Base
+  title="Tanishq Jasoria"
+  description="Systems programmer writing about EVM internals, Rust, fuzzing, and formal verification."
+  path="tanishq@blog: ~/writing — zsh"
+>
+  <Prompt cmd="whoami" />
+  <div class="output">
+    <h1 class="name">Tanishq Jasoria<span class="cursor"></span></h1>
+    <p class="bio">
+      Systems programmer. I write about <span class="kw">EVM internals</span>,
+      <span class="kw">Rust</span>, <span class="kw">fuzzing</span>, and the
+      occasional strong opinion about boring technology. Everything here was
+      debugged before it was published.
+    </p>
+  </div>
+
+  <Prompt cmd="ls -lt ./posts" />
+  <div class="listing">
+    <div class="lhead"><span>NAME / DESCRIPTION</span><span>MODIFIED · SIZE</span></div>
+    {posts.map((post) => (
+      <a class="entry" href={`/posts/${post.id}/`}>
+        <span class="edate">{isoDate(post.data.date)}</span>
+        <span class="ename">{post.id}.md</span>
+        <span class="esize">{readingTime(post.body)}</span>
+        <span class="edesc">{post.data.description}</span>
+      </a>
+    ))}
+  </div>
+
+  <div class="section">
+    <Prompt cmd="ls ./courses" />
+    <div class="listing">
+      <div class="lhead"><span>NAME / DESCRIPTION</span><span>STARTED · STATUS</span></div>
+      {courses.map((course) => (
+        <a class="entry" href={`/courses/${course.id}/`}>
+          <span class="edate">{isoDate(course.data.started)}</span>
+          <span class="ename">{course.id}/</span>
+          <span class="esize">{course.data.status === 'in progress' ? 'wip' : 'done'}</span>
+          <span class="edesc">{course.data.title} — {course.data.description}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="prompt-line" style="margin-top:52px">
+      <span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span>
+      <span class="p-sym">❯</span> cat ./socials
+    </div>
+    <div class="links">
+      <a href="https://github.com/tanishqjasoria">github ↗</a>
+      <a href="https://twitter.com/tanishqjasoria">twitter ↗</a>
+      <a href="/rss.xml">rss ↗</a>
+      <a href="mailto:jasoriatanishq@gmail.com">email ↗</a>
+    </div>
+    <p class="comment">no trackers, no analytics, no cookies. just posts.</p>
+  </footer>
+</Base>

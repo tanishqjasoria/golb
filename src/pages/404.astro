@@ -1,0 +1,19 @@
+---
+import Base from '@/layouts/Base.astro';
+import Prompt from '@/components/Prompt.astro';
+---
+<Base
+  title="404 — Tanishq Jasoria"
+  description="Page not found."
+  path="tanishq@blog: ~/writing — zsh"
+>
+  <Prompt cmd="cat ./that-page" />
+  <div class="output">
+    <p class="bio">cat: ./that-page: No such file or directory</p>
+  </div>
+  <footer class="site">
+    <div class="links">
+      <a href="/">cd ~ ↩</a>
+    </div>
+  </footer>
+</Base>

@@ -1,0 +1,51 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import Prompt from '@/components/Prompt.astro';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  return lessons.map((lesson) => {
+    const courseId = lesson.id.split('/')[0] ?? '';
+    const slug = lesson.id.split('/').at(-1) ?? lesson.id;
+    return { params: { course: courseId, lesson: slug }, props: { lesson, courseId } };
+  });
+}
+
+const { lesson, courseId } = Astro.props;
+const course = await getEntry('courses', courseId);
+if (!course) {
+  throw new Error(`Lesson ${lesson.id} belongs to unknown course "${courseId}"`);
+}
+const { Content } = await render(lesson);
+
+const siblings = (
+  await getCollection('lessons', (entry) => entry.id.startsWith(`${courseId}/`))
+).sort((a, b) => a.data.order - b.data.order);
+const index = siblings.findIndex((entry) => entry.id === lesson.id);
+const prev = index > 0 ? siblings[index - 1] : undefined;
+const next = index < siblings.length - 1 ? siblings[index + 1] : undefined;
+
+const lessonSlug = (id: string) => id.split('/').at(-1) ?? id;
+---
+<Base
+  title={`${lesson.data.title} — ${course.data.title}`}
+  description={lesson.data.description}
+  path={`tanishq@blog: ~/writing/courses/${lesson.id}.md — zsh`}
+>
+  <Prompt cmd={`cat ${lessonSlug(lesson.id)}.md`} />
+  <article class="prose">
+    <header class="post-head">
+      <h1>{lesson.data.title}</h1>
+      <p class="meta">{course.data.title} · lesson {String(lesson.data.order).padStart(2, '0')}</p>
+    </header>
+    <Content />
+  </article>
+  <footer class="site">
+    <div class="links">
+      {prev && <a href={`/courses/${courseId}/${lessonSlug(prev.id)}/`}>← {lessonSlug(prev.id)}</a>}
+      <a href={`/courses/${courseId}/`}>cd .. ↩</a>
+      {next && <a href={`/courses/${courseId}/${lessonSlug(next.id)}/`}>{lessonSlug(next.id)} →</a>}
+    </div>
+  </footer>
+</Base>

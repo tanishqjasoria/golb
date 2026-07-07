@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import Prompt from '@/components/Prompt.astro';
+import { isoDate, readingTime } from '@/lib/format';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<Base
+  title={`${post.data.title} — Tanishq Jasoria`}
+  description={post.data.description}
+  path={`tanishq@blog: ~/writing/posts/${post.id}.md — zsh`}
+>
+  <Prompt cmd={`cat ${post.id}.md`} />
+  <article class="prose">
+    <header class="post-head">
+      <h1>{post.data.title}</h1>
+      <p class="meta">{isoDate(post.data.date)} · {readingTime(post.body)} read</p>
+    </header>
+    <Content />
+  </article>
+  <footer class="site">
+    <div class="links">
+      <a href="/">cd ~ ↩</a>
+    </div>
+  </footer>
+</Base>
