@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   // Must match the Workers project name in the Cloudflare dashboard.
-  "name": "my-blog",
+  "name": "golb",
   "compatibility_date": "2026-07-12",
   // Static assets only — no Worker script, no server rendering.
   "assets": {
