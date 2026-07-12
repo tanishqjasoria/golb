@@ -147,8 +147,14 @@ footer.site .links a:hover { border-color: var(--clay); color: var(--clay-d); ba
 }
 .prose h2 { font-size: 21px; }
 .prose h3 { font-size: 17px; }
+.prose h4 { font-size: 15px; }
 .prose h2::before { content: "## "; color: var(--g300); font-weight: 500; }
 .prose h3::before { content: "### "; color: var(--g300); font-weight: 500; }
+.prose h4::before { content: "#### "; color: var(--g300); font-weight: 500; }
+.prose img {
+  max-width: 100%; border: 1.5px solid var(--g300);
+  border-radius: 10px; margin: 4px 0 8px;
+}
 .prose a {
   color: var(--clay-d); text-decoration: underline;
   text-decoration-color: var(--oat); text-underline-offset: 3px;
