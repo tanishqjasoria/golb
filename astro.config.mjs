@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // Update this when the real domain is connected (also used for RSS links).
-  site: 'https://tanishqjasoria.com',
+  // Canonical origin — absolute URLs (e.g. RSS links) are generated from this.
+  site: 'https://tanishq.sh',
   markdown: {
     shikiConfig: {
       theme: 'vitesse-light',
