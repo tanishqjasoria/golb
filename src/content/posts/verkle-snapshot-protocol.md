@@ -18,7 +18,7 @@ to read about the snap protocol.
 
 ## Structure of Verkle Tree
 
-![Verkle tree structure: extension nodes identified by stem, each holding a 256-leaf suffix tree](/images/verkle-tree-structure.png)
+![Verkle tree structure: extension nodes identified by stem, each holding a 256-leaf suffix tree](/images/verkle-tree-structure.svg)
 
 In the Verkle tree structure, each extension node can be uniquely identified
 by its stem (B_31). Remarkably, a suffix tree corresponding to a single
@@ -98,7 +98,7 @@ Notes:
 
 ## Verkle Range Proof
 
-![Verkle range proof: only the root nodes of boundary subtrees (green) need proofs](/images/verkle-range-proof.png)
+![Verkle range proof: only the boundary subtree roots (olive) are included in the proof; the served range verifies itself](/images/verkle-range-proof.svg)
 
 The green nodes here are the one that we need to generate the verkle proof
 for the range.

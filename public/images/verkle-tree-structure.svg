@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">
+  <rect width="1200" height="640" rx="12" fill="#FAF9F5"/>
+
+  <!-- root -->
+  <rect x="530" y="36" width="140" height="52" rx="8" fill="#FFFFFF" stroke="#141413" stroke-width="1.5"/>
+  <text x="600" y="58" text-anchor="middle" font-size="14" fill="#141413" font-weight="600">root</text>
+  <text x="600" y="76" text-anchor="middle" font-size="11" fill="#87867F">internal node</text>
+
+  <!-- edges root -> level 2 -->
+  <line x1="562" y1="88" x2="360" y2="148" stroke="#D1CFC5" stroke-width="1.5"/>
+  <line x1="600" y1="88" x2="600" y2="148" stroke="#D97757" stroke-width="1.5"/>
+  <line x1="638" y1="88" x2="840" y2="148" stroke="#D1CFC5" stroke-width="1.5"/>
+
+  <!-- level 2 internal nodes -->
+  <rect x="290" y="148" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+  <text x="360" y="175" text-anchor="middle" font-size="12" fill="#87867F">internal node</text>
+  <rect x="530" y="148" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#141413" stroke-width="1.5"/>
+  <text x="600" y="175" text-anchor="middle" font-size="12" fill="#141413">internal node</text>
+  <rect x="770" y="148" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+  <text x="840" y="175" text-anchor="middle" font-size="12" fill="#87867F">internal node</text>
+  <text x="990" y="175" font-size="14" fill="#87867F">…</text>
+
+  <!-- edge level 2 -> extension node -->
+  <line x1="600" y1="192" x2="600" y2="252" stroke="#D97757" stroke-width="1.5"/>
+
+  <!-- extension node -->
+  <rect x="450" y="252" width="300" height="64" rx="8" fill="#F3EBDD" stroke="#D97757" stroke-width="1.5"/>
+  <text x="600" y="278" text-anchor="middle" font-size="14" fill="#141413" font-weight="600">extension node</text>
+  <text x="600" y="298" text-anchor="middle" font-size="12" fill="#B85C3E">stem = key[0..30] — B_31, unique</text>
+
+  <!-- edge extension -> suffix tree -->
+  <line x1="600" y1="316" x2="600" y2="372" stroke="#D97757" stroke-width="1.5"/>
+
+  <!-- suffix tree panel -->
+  <rect x="220" y="372" width="760" height="188" rx="10" fill="none" stroke="#87867F" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="244" y="402" font-size="12" fill="#87867F">suffix tree — 256 leaves, served as a single unit in verkle sync</text>
+
+  <!-- leaves -->
+  <g font-size="11" text-anchor="middle">
+    <rect x="252" y="430" width="76" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="290" y="462" fill="#141413">leaf_0</text>
+    <text x="290" y="482" fill="#87867F" font-size="10">B_32</text>
+
+    <rect x="344" y="430" width="76" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="382" y="462" fill="#141413">leaf_1</text>
+    <text x="382" y="482" fill="#87867F" font-size="10">B_32</text>
+
+    <rect x="436" y="430" width="76" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="474" y="462" fill="#141413">leaf_2</text>
+    <text x="474" y="482" fill="#87867F" font-size="10">B_32</text>
+
+    <rect x="528" y="430" width="76" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="566" y="462" fill="#141413">leaf_3</text>
+    <text x="566" y="482" fill="#87867F" font-size="10">B_32</text>
+
+    <rect x="620" y="430" width="76" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="658" y="462" fill="#141413">leaf_4</text>
+    <text x="658" y="482" fill="#87867F" font-size="10">B_32</text>
+
+    <text x="740" y="470" fill="#87867F" font-size="16">…</text>
+
+    <rect x="788" y="430" width="88" height="72" rx="6" fill="#FFFFFF" stroke="#D1CFC5" stroke-width="1.5"/>
+    <text x="832" y="462" fill="#141413">leaf_255</text>
+    <text x="832" y="482" fill="#87867F" font-size="10">B_32</text>
+  </g>
+
+  <!-- suffix index note -->
+  <text x="244" y="540" font-size="11" fill="#87867F"># leaf index = key[31], the last byte of the 32-byte key</text>
+
+  <!-- legend -->
+  <text x="220" y="600" font-size="12" fill="#87867F">B_31 = 31-byte stem · B_32 = 32-byte value · one extension node ↔ one stem ↔ 256 leaves</text>
+</svg>

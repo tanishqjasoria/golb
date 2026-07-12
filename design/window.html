@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" name="Terminal window" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF9F5;--paper:#FFF;--slate:#141413;--clay:#D97757;--clay-d:#B85C3E;--olive:#788C5D;--gold:#C9A554;--g100:#F0EEE6;--g200:#E6E3DA;--g300:#D1CFC5;--g500:#87867F;--g700:#3D3D3A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ivory);color:var(--g700);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;padding:36px}
+.window{max-width:640px;margin:0 auto;background:var(--paper);border:1.5px solid var(--g300);border-radius:14px;box-shadow:0 20px 56px rgba(20,20,19,.08);overflow:hidden}
+.titlebar{display:flex;align-items:center;gap:8px;background:var(--g100);border-bottom:1.5px solid var(--g200);padding:14px 20px}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:var(--clay)}.dot.y{background:var(--gold)}.dot.g{background:var(--olive)}
+.path{margin-left:12px;font-size:13px;color:var(--g500)}
+.inner{padding:32px 36px;font-size:14px;line-height:1.7}
+.p-user{color:var(--olive);font-weight:500}.p-at{color:var(--g500)}.p-path{color:var(--clay-d);font-weight:500}.p-sym{color:var(--clay)}
+</style></head><body>
+<div class="window">
+  <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">tanishq@blog: ~/writing — zsh</span></div>
+  <div class="inner">
+    <div><span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span> <span class="p-sym">❯</span> echo "content lives inside a paper window on ivory"</div>
+    <p style="margin-top:10px">content lives inside a paper window on ivory</p>
+  </div>
+</div>
+</body></html>

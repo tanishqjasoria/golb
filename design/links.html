@@ -1,0 +1,23 @@
+<!-- @dsCard group="Components" name="Pill links" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF9F5;--clay:#D97757;--clay-d:#B85C3E;--oat:#E3DACC;--g300:#D1CFC5;--g500:#87867F;--g700:#3D3D3A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ivory);color:var(--g700);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;padding:32px;display:grid;gap:24px}
+a{text-decoration:none;color:inherit}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{font-size:13.5px;color:var(--g700);border:1.5px solid var(--g300);border-radius:999px;padding:8px 18px;transition:all .15s;background:#fff}
+.links a:hover{border-color:var(--clay);color:var(--clay-d);background:var(--ivory)}
+.label{font-size:11px;color:var(--g500)}
+.inline{font-size:15px;line-height:1.8;max-width:560px}
+.inline a{color:var(--clay-d);text-decoration:underline;text-decoration-color:var(--oat);text-underline-offset:3px}
+.inline a:hover{text-decoration-color:var(--clay)}
+</style></head><body>
+<div><div class="label" style="margin-bottom:10px">pill links — socials, nav, prev/next</div>
+<div class="links"><a href="#">github ↗</a><a href="#">twitter ↗</a><a href="#">rss ↗</a><a href="#">cd ~ ↩</a></div></div>
+<div><div class="label" style="margin-bottom:6px">inline links — clay-d with oat underline, clay on hover</div>
+<p class="inline">Read more about the structure of <a href="#">Verkle Trees</a> or the <a href="#">snap protocol spec</a>.</p></div>
+</body></html>

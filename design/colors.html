@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" name="Palette" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF9F5;--paper:#FFF;--slate:#141413;--clay:#D97757;--clay-d:#B85C3E;--oat:#E3DACC;--olive:#788C5D;--gold:#C9A554;--g100:#F0EEE6;--g200:#E6E3DA;--g300:#D1CFC5;--g500:#87867F;--g700:#3D3D3A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ivory);color:var(--g700);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;padding:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;max-width:720px}
+.swatch{border:1.5px solid var(--g300);border-radius:10px;overflow:hidden;background:var(--paper)}
+.swatch .chip{height:64px}
+.swatch .meta{padding:10px 12px;font-size:11px;line-height:1.5}
+.swatch .meta b{display:block;color:var(--slate);font-weight:500;font-size:12px}
+</style></head><body>
+<div class="grid">
+  <div class="swatch"><div class="chip" style="background:#FAF9F5;border-bottom:1px solid #E6E3DA"></div><div class="meta"><b>--ivory</b>#FAF9F5 · page ground</div></div>
+  <div class="swatch"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E6E3DA"></div><div class="meta"><b>--paper</b>#FFFFFF · window surface</div></div>
+  <div class="swatch"><div class="chip" style="background:#141413"></div><div class="meta"><b>--slate</b>#141413 · headings, emphasis</div></div>
+  <div class="swatch"><div class="chip" style="background:#D97757"></div><div class="meta"><b>--clay</b>#D97757 · primary accent</div></div>
+  <div class="swatch"><div class="chip" style="background:#B85C3E"></div><div class="meta"><b>--clay-d</b>#B85C3E · links, hover</div></div>
+  <div class="swatch"><div class="chip" style="background:#E3DACC"></div><div class="meta"><b>--oat</b>#E3DACC · selection, underlines</div></div>
+  <div class="swatch"><div class="chip" style="background:#788C5D"></div><div class="meta"><b>--olive</b>#788C5D · prompt user, success</div></div>
+  <div class="swatch"><div class="chip" style="background:#C9A554"></div><div class="meta"><b>--gold</b>#C9A554 · titlebar dot</div></div>
+  <div class="swatch"><div class="chip" style="background:#F0EEE6"></div><div class="meta"><b>--g100</b>#F0EEE6 · fills, hover bg</div></div>
+  <div class="swatch"><div class="chip" style="background:#E6E3DA"></div><div class="meta"><b>--g200</b>#E6E3DA · hairlines</div></div>
+  <div class="swatch"><div class="chip" style="background:#D1CFC5"></div><div class="meta"><b>--g300</b>#D1CFC5 · borders</div></div>
+  <div class="swatch"><div class="chip" style="background:#87867F"></div><div class="meta"><b>--g500</b>#87867F · secondary text</div></div>
+  <div class="swatch"><div class="chip" style="background:#3D3D3A"></div><div class="meta"><b>--g700</b>#3D3D3A · body text</div></div>
+</div>
+</body></html>

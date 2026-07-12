@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" name="Prompt line" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF9F5;--clay:#D97757;--clay-d:#B85C3E;--olive:#788C5D;--g300:#D1CFC5;--g500:#87867F;--g700:#3D3D3A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ivory);color:var(--g700);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;padding:32px;display:grid;gap:16px}
+.prompt-line{font-size:15px}
+.p-user{color:var(--olive);font-weight:500}.p-at{color:var(--g500)}.p-path{color:var(--clay-d);font-weight:500}.p-sym{color:var(--clay)}
+.comment{color:var(--g500);font-size:13.5px}
+.comment::before{content:"# ";color:var(--g300)}
+</style></head><body>
+<div class="prompt-line"><span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span> <span class="p-sym">❯</span> whoami</div>
+<div class="prompt-line"><span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span> <span class="p-sym">❯</span> ls -lt ./posts</div>
+<div class="prompt-line"><span class="p-user">tanishq</span><span class="p-at">@</span><span class="p-path">blog</span> <span class="p-sym">❯</span> cat ./socials</div>
+<p class="comment">comment line — used for asides and footers. no trackers, no analytics.</p>
+</body></html>

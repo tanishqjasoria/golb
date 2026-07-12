@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" name="File listing" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF9F5;--slate:#141413;--clay:#D97757;--clay-d:#B85C3E;--oat:#E3DACC;--g100:#F0EEE6;--g200:#E6E3DA;--g300:#D1CFC5;--g500:#87867F;--g700:#3D3D3A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ivory);color:var(--g700);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;padding:32px}
+a{text-decoration:none;color:inherit}
+.listing{border:1.5px solid var(--g300);border-radius:10px;overflow:hidden;max-width:760px;background:#fff}
+.lhead{display:flex;justify-content:space-between;background:var(--g100);padding:12px 24px;font-size:12px;letter-spacing:.08em;color:var(--g500);border-bottom:1.5px solid var(--g200)}
+.entry{display:grid;grid-template-columns:110px 1fr 70px;gap:24px;align-items:baseline;padding:18px 24px;border-bottom:1px solid var(--g200);transition:background .15s}
+.entry:last-child{border-bottom:none}
+.entry:hover{background:var(--g100)}
+.edate{font-size:13px;color:var(--g500)}
+.ename{font-size:15px;font-weight:500;color:var(--slate)}
+.ename::before{content:"❯ ";color:var(--g300);transition:color .15s}
+.entry:hover .ename{color:var(--clay-d);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--oat)}
+.entry:hover .ename::before{color:var(--clay)}
+.edesc{grid-column:2;font-size:13px;color:var(--g500);line-height:1.6;margin-top:4px}
+.esize{font-size:12.5px;color:var(--g500);text-align:right}
+</style></head><body>
+<div class="listing">
+  <div class="lhead"><span>NAME / DESCRIPTION</span><span>MODIFIED · SIZE</span></div>
+  <a class="entry" href="#"><span class="edate">2026-02-14</span><span class="ename">a-field-guide-to-undefined-behavior.md</span><span class="esize">18 min</span><span class="edesc">What the compiler is allowed to do when you break the rules.</span></a>
+  <a class="entry" href="#"><span class="edate">2026-01-20</span><span class="ename">understanding-evm-storage-layouts.md</span><span class="esize">14 min</span><span class="edesc">Slots, packing, and keccak: how Solidity variables land on-chain.</span></a>
+</div>
+</body></html>
