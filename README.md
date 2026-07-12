@@ -38,18 +38,8 @@ frontmatter. The body is the course landing page.
 
 ## Deploying
 
-Repo: [github.com/tanishqjasoria/golb](https://github.com/tanishqjasoria/golb).
-One-time setup left:
-
-1. In the [Cloudflare dashboard](https://dash.cloudflare.com): Workers & Pages →
-   Create → Pages → connect the `golb` repo.
-   Build command `npm run build`, output directory `dist`. Every push to `main`
-   deploys automatically.
-2. Domain: buy one via Cloudflare Registrar, attach it under the Pages project's
-   Custom Domains tab, then update `site` in `astro.config.mjs` to match
-   (it's what RSS links are generated from).
-
-## TODO
-
-- Replace the twitter link in `src/pages/index.astro` with the real handle
-  (currently guesses `@tanishqjasoria`).
+Repo: [github.com/tanishqjasoria/golb](https://github.com/tanishqjasoria/golb),
+connected to Cloudflare Workers Builds — every push to `main` builds and deploys
+the `golb` Worker (static assets only, config in `wrangler.jsonc`). Manual deploy:
+`npm run deploy`. Domain: [tanishq.sh](https://tanishq.sh), attached in the
+Cloudflare dashboard; `site` in `astro.config.mjs` must match it.
