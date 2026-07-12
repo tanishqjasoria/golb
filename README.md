@@ -36,17 +36,16 @@ frontmatter. The body is the course landing page.
 **New lesson** — add `src/content/courses/<course-slug>/lessons/<slug>.md` with
 `title`, `description`, and `order` (controls sequence and prev/next links).
 
-## Deploying (one-time setup)
+## Deploying
 
-1. Create the GitHub repo and push:
-   ```bash
-   gh repo create my-blog --public --source=. --push
-   ```
-2. In the [Cloudflare dashboard](https://dash.cloudflare.com): Workers & Pages →
-   Create → Pages → connect the `my-blog` repo.
+Repo: [github.com/tanishqjasoria/golb](https://github.com/tanishqjasoria/golb).
+One-time setup left:
+
+1. In the [Cloudflare dashboard](https://dash.cloudflare.com): Workers & Pages →
+   Create → Pages → connect the `golb` repo.
    Build command `npm run build`, output directory `dist`. Every push to `main`
    deploys automatically.
-3. Domain: buy one via Cloudflare Registrar, attach it under the Pages project's
+2. Domain: buy one via Cloudflare Registrar, attach it under the Pages project's
    Custom Domains tab, then update `site` in `astro.config.mjs` to match
    (it's what RSS links are generated from).
 
