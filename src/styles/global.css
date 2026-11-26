@@ -75,7 +75,7 @@ h1.name .cursor {
   animation: blink 1.1s steps(1) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
-.bio { font-size: 15px; line-height: 1.75; max-width: 680px; }
+.bio { font-size: 15px; line-height: 1.75; }
 .bio .kw { color: var(--clay-d); font-weight: 500; }
 
 /* ── file listings ─────────────────────────────────────── */
